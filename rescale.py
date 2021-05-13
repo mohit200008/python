@@ -12,7 +12,12 @@ def rescaleFrame(frame,scale=0.50):
 
     return cv.resize(frame,dimensions, interpolation=cv.INTER_AREA)
 
+def changeRes(width,height):
+    capture.set(3,width)
+    capture.set(4,height)
+
 resized_image = rescaleFrame(img)
+
 cv.imshow('Image',resized_image)   
 
 capture= cv.VideoCapture('Instagram.mp4')
