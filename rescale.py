@@ -1,8 +1,8 @@
 import cv2 as cv
 
-# img= cv.imread('thor.jpg')
+img= cv.imread('thor.jpg')
 
-# cv.imshow('THOR',img)
+cv.imshow('THOR',img)
 
 def rescaleFrame(frame,scale=0.50):
     width=int(frame.shape[1]*scale)
@@ -11,6 +11,9 @@ def rescaleFrame(frame,scale=0.50):
     dimensions= (width,height)
 
     return cv.resize(frame,dimensions, interpolation=cv.INTER_AREA)
+
+resized_image = rescaleFrame(img)
+cv.imshow('Image',resized_image)   
 
 capture= cv.VideoCapture('Instagram.mp4')
 
